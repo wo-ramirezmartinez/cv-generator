@@ -1,0 +1,18 @@
+---
+description: Reglas de contenido al generar o editar un CV a medida de una vacante
+globs: src/cvs/**/*.ts
+alwaysApply: false
+---
+
+# CV a medida (contenido)
+
+Al crear o ajustar un archivo en `src/cvs/`, seguir el skill **generate-cv**. Resumen no negociable:
+
+1. Exportar **`CvEntry`** (`id`, `jobTitle`, `headline`, `company`, `createdAt`, `profile`) y registrarlo en `src/cvs/index.ts`.
+2. **Solo evidencia en `md/`.** Puente afín permitido; nunca inventar herramientas.
+3. **Sobre mí:** acoplar 1–2 tech de la oferta; blanda solo si la vacante la pide y hay evidencia.
+4. **Skills:** requeridos + deseables cubiertos (directo o afín); 10–14 ítems.
+5. **Formación:** siempre USAT 2019; sin extras salvo pedido explícito.
+6. **Idiomas:** `[]` salvo que la oferta o el usuario lo pidan.
+7. **Experiencia:** densa (Ingala 6–8, Infobae 4–6, Jaén 1–2, LOT 2–3), orientada a la vacante.
+8. Entregar tabla requerimiento → directo | afín | omitido.

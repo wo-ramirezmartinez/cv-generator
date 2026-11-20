@@ -1,5 +1,13 @@
 .cv-container {
+  min-height: 100svh;
   padding: 24px 16px 48px;
+  /* background:
+    radial-gradient(1000px 420px at 80% -20%, color-mix(in srgb, var(--color-muted) 40%, transparent), transparent 55%),
+    #e7e5e4; */
+  background:
+    radial-gradient(1200px 480px at 12% -10%, color-mix(in srgb, var(--color-muted) 55%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 100% 0%, color-mix(in srgb, var(--color-border) 28%, transparent), transparent 55%),
+    linear-gradient(165deg, #ebe4dc 0%, #e7e5e4 42%, #ddd6ce 100%);
 }
 
 .cv-screen-only {
@@ -19,7 +27,7 @@
   border: 0;
   border-radius: 6px;
   padding: 8px 14px;
-  background: #3f2a1d;
+  background: var(--color-brand);
   color: #fff;
 }
 
@@ -59,7 +67,9 @@
   }
 
   .cv-container {
+    min-height: 0;
     padding: 0;
+    background: #fff;
   }
 
   .cv {

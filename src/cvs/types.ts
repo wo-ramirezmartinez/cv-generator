@@ -37,3 +37,13 @@ export type CvProfile = {
   languages: CvLanguage[]
   experience: CvExperience[]
 }
+
+/** Entrada de catálogo: metadata del listado + perfil exportable. */
+export type CvEntry = {
+  id: string
+  jobTitle: string
+  headline: string
+  company: string
+  createdAt: string // ISO date YYYY-MM-DD
+  profile: CvProfile
+}

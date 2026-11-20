@@ -1,32 +1,15 @@
-import "./App.css";
-import AsideComponent from "./components/aside";
-import ExperienceComponent from "./components/experience";
-import HeaderComponent from "./components/header";
-import { arcXpCv } from "./cvs/arc-xp";
-
-const cv = arcXpCv;
+import { Navigate, Route, Routes } from 'react-router'
+import CvDetailPage from './pages/CvDetailPage'
+import CvListPage from './pages/CvListPage'
 
 function App() {
   return (
-    <div className="cv-container">
-      <p className="cv-screen-only">
-        <button className="cv-button-download" type="button" onClick={() => window.print()}>
-          Guardar PDF
-        </button>
-        Chrome: márgenes en Ninguno y gráficos de fondo activados.
-      </p>
-
-      <article className="cv">
-        <HeaderComponent cv={cv} />
-
-        <div className="cv-columns">
-          <AsideComponent cv={cv} />
-
-          <ExperienceComponent cv={cv} />
-        </div>
-      </article>
-    </div>
-  );
+    <Routes>
+      <Route path="/" element={<CvListPage />} />
+      <Route path="/cv/:id" element={<CvDetailPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App

@@ -2,7 +2,7 @@ import type { CvProfile } from "../../cvs/types";
 import "./index.css";
 
 const AsideComponent = ({ cv }: { cv: CvProfile }) => {
-  const { summary, skills, education } = cv;
+  const { summary, skills, education, languages } = cv;
 
   return (
     <aside className="cv-aside">
@@ -35,16 +35,18 @@ const AsideComponent = ({ cv }: { cv: CvProfile }) => {
         ))}
       </section>
 
-      {/* <section className="cv-aside-section cv-languages">
-        <h2 className="cv-languages-title">Idiomas</h2>
-        {languages.map((item) => (
-          <p key={item.name}>
-            <strong>{item.name}</strong>
-            <br />
-            {item.detail}
-          </p>
-        ))}
-      </section> */}
+      {languages.length > 0 ? (
+        <section className="cv-aside-section cv-languages">
+          <h2 className="cv-languages-title">Idiomas</h2>
+          {languages.map((item) => (
+            <p key={item.name}>
+              <strong>{item.name}</strong>
+              <br />
+              {item.detail}
+            </p>
+          ))}
+        </section>
+      ) : null}
     </aside>
   );
 };
