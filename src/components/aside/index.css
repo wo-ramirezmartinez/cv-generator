@@ -1,0 +1,63 @@
+.cv-aside {
+  min-height: 100%;
+  height: 100%;
+  padding-inline: 8mm;
+  padding-top: 4mm;
+  padding-bottom: 9mm;
+  background-color: var(--color-surface);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cv-about-text {
+  font-size: 10pt;
+}
+
+.cv-aside-section + .cv-aside-section {
+  margin-top: 4mm;
+}
+
+.cv-skills {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-aside h2 {
+  margin-bottom: 6px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-border-muted);
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #3f2a1d;
+}
+
+.cv-skill {
+  padding: 1px 0 1px 8px;
+  border-left: 3px solid var(--color-accent);
+  font-size: 10pt;
+}
+
+.cv-skill + .cv-skill {
+  margin-top: 3px;
+}
+
+.cv-education-institution {
+  font-size: 9pt;
+}
+
+.cv-education-title-year {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.cv-education-year {
+  background-color: var(--color-accent);
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: var(--color-surface);
+  font-size: 8pt;
+}

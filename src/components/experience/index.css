@@ -1,0 +1,73 @@
+.experience {
+  padding-inline: 8mm;
+  padding-top: 4mm;
+}
+
+.experience-job {
+  /* Solo evita cortar un puesto a la mitad si cabe; no bloquear toda la columna. */
+  break-inside: avoid;
+}
+
+.experience-title {
+  margin-bottom: 6px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-border-muted);
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.experience-job + .experience-job {
+  margin-top: 3mm;
+}
+
+.experience-job-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.experience-job-title {
+  margin: 0;
+  font-size: 11pt;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-brand);
+}
+
+.experience-job-title span {
+  display: block;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.experience-job-period {
+  flex: none;
+  font-size: 8.5pt;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* .experience-job-period {
+  background-color: #f3e0d2;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: #c76b3f;
+  font-size: 8pt;
+  font-weight: 800;
+} */
+
+.experience-job-bullets {
+  margin: 4px 0 0;
+  padding-left: 1.1em;
+}
+
+.experience-job-bullet {
+  font-size: 10pt;
+}
+
+.experience-job-bullet + .experience-job-bullet {
+  margin-top: 2px;
+}

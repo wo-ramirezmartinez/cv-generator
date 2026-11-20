@@ -1,27 +1,18 @@
 :root {
-  --text: #1a1a1a;
-  --text-muted: #6b7280;
-  --bg: #ffffff;
-  --border: #e5e7eb;
-
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: var(--text);
-  background-color: var(--bg);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #1c1917;
+  background: #fff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #f3f4f6;
-    --text-muted: #9ca3af;
-    --bg: #111827;
-    --border: #374151;
-  }
+  --color-brand: #3f2a1d; /* Tu color principal de marca */
+  --color-accent: #c76b3f; /* Para resaltar llamadas a la acción o detalles */
+  --color-surface: #fdf8f3; /* Fondos de tarjetas, modales o el body */
+  --color-text: #1c1917; /* Texto principal */
+  --color-muted: #e7c4a8; /* Textos secundarios, bordes o elementos sutiles */
+  --color-border: #d98c5f; /* Borde de elementos  */
+  --color-border-muted: #e7d5c4; /* Borde de elementos secundarios  */
 }
 
 *,
@@ -32,18 +23,17 @@
 
 body {
   margin: 0;
-  min-height: 100svh;
+  background: #e7e5e4;
 }
 
 #root {
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
 }
 
-h1 {
+h1,
+h2,
+h3,
+p,
+ul {
   margin: 0;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text);
 }
