@@ -41,6 +41,11 @@ Migración y evolución de plataformas editoriales de gran audiencia. Trabajo so
 - Cookies para **autenticación y preferencias**.
 - Depuración de APIs con **Chrome DevTools**.
 
+### Entorno local, contenedores y pruebas
+
+- Proyectos Arc XP que **arrancaban bajo contenedores e imágenes Docker**: aprendizaje práctico para **ejecutarlos** y configurar la conexión con **Docker Desktop** y **WSL** (nivel básico de uso diario, no ops avanzado).
+- **Jest** en migraciones: pruebas sobre **componentes grandes** o lógica tediosa, en un contexto de cambios rápidos y constantes que limitaba una suite exhaustiva.
+
 ### Colaboración y calidad
 
 - Trabajo con **diseño, TI y clientes**: soluciones técnicas, **estimaciones**, **code reviews**, entregas incrementales y presentación de avances.
@@ -52,7 +57,7 @@ Migración y evolución de plataformas editoriales de gran audiencia. Trabajo so
 
 ## Tecnologías
 
-`React` · `JavaScript` · `HTML` · `CSS` · `Sass` · `Node.js` · `REST` · `Arc XP` (Composer, PageBuilder, Content Sources, resolvers) · `MongoDB` · `SQL Server` · `MySQL` · `PostgreSQL` · `Oracle` (migraciones) · `PocketBase` · `GTM` · `Google Analytics` · `Chrome DevTools`
+`React` · `JavaScript` · `HTML` · `CSS` · `Sass` · `Node.js` · `REST` · `Arc XP` (Composer, PageBuilder, Content Sources, resolvers) · `MongoDB` · `SQL Server` · `MySQL` · `PostgreSQL` · `Oracle` (migraciones) · `PocketBase` · `GTM` · `Google Analytics` · `Chrome DevTools` · `Docker` (básico, Desktop + WSL) · `Jest` (selectivo)
 
 ## Bullets sólidos (listos para CV)
 
@@ -67,6 +72,8 @@ Elegir según oferta; todos están contrastados en al menos una versión de CV.
 7. Análisis y migración de datos desde **SQL** hacia **MongoDB** definiendo alcance de tablas y campos.
 8. Implementación de **GTM, GA y data layers** y cookies para medición y preferencias.
 9. Colaboración cross-funcional, estimaciones, code reviews y entregas incrementales con clientes.
+10. Entorno local con **Docker** (imágenes/contenedores Arc XP) vía **Docker Desktop** y **WSL**.
+11. Pruebas con **Jest** en componentes grandes o lógica crítica durante migraciones de alto ritmo.
 
 ## Notas y variantes
 

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link, useParams } from 'react-router'
 import AsideComponent from '../components/aside'
 import ExperienceComponent from '../components/experience'
@@ -6,9 +7,35 @@ import { getCvById } from '../cvs'
 import '../App.css'
 import './CvDetailPage.css'
 
+/** Chrome usa el título de la pestaña como nombre al guardar PDF. */
+function pdfFileName(company: string): string {
+  const cleaned = company
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim()
+  const first = cleaned.split(/[\s/|,-]+/).filter(Boolean)[0] ?? 'CV'
+  const acronym = /^[A-Z0-9]{2,10}$/.test(first) ? first : null
+  const slug = (acronym ?? cleaned)
+    .replace(/[^A-Za-z0-9]+/g, '_')
+    .replace(/^_|_$/g, '')
+
+  return `CV_William_${slug}`
+}
+
 export default function CvDetailPage() {
   const { id } = useParams<{ id: string }>()
   const entry = id ? getCvById(id) : undefined
+
+  useEffect(() => {
+    if (!entry) return
+
+    const previous = document.title
+    document.title = pdfFileName(entry.company)
+
+    return () => {
+      document.title = previous
+    }
+  }, [entry])
 
   if (!entry) {
     return (

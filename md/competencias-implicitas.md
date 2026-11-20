@@ -58,15 +58,24 @@ Documentado en [formacion-continua.md](./formacion-continua.md): **TypeScript** 
 | **Jira / Confluence / Slack** | Solo si usaste | Medios y consultora — **tú confirmas** |
 | **Figma** (lectura de diseños) | Solo si usaste | Colaboración con diseño |
 
+## Confirmado por el usuario (ya en conocimientos-solidos)
+
+| Tecnología | Nivel / matiz |
+|------------|----------------|
+| **Docker** | Básico — Arc XP con Docker Desktop + WSL; no K8s |
+| **Jest** | Contextual — componentes grandes / lógica tediosa en migraciones Arc XP |
+| **IA como herramienta** | Alineado a la tendencia; en CV no nombrar productos ni “generar/revisar código” |
+
 ## Confirmar contigo antes de listar
 
 | Tecnología | Riesgo |
 |------------|--------|
-| **Jest / Testing Library / Cypress** | No aparece en tu historial; no pongas testing salvo que lo hayas hecho |
-| **Docker / Kubernetes** | No inferible de tu texto |
+| **Testing Library / Cypress** | Jest sí (contextual); no inflar a e2e u otras libs sin evidencia |
+| **Kubernetes** | No inferible; Docker ≠ K8s |
 | **AWS / Azure / GCP** | Solo si hubo despliegue o servicios concretos |
 | **GraphQL** | Solo REST documentado |
 | **Next.js** | No documentado (distinto de React SPA/Arc) |
+| **.NET / C#** | Sin evidencia laboral; no listar salvo confirmación explícita |
 
 ## Git: cómo decirlo sin inflar
 

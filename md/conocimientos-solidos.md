@@ -10,6 +10,9 @@ Para **Git, npm, Agile y otras inferencias razonables** sin relato en CV, ver [c
 |------|-------|--------|
 | **Git** (ramas, merge, PR) | Avanzado | Code review, pair, entregas incrementales |
 | **GitHub** | Avanzado | Cuenta activa; flujo colaborativo |
+| **Docker** (básico) | Básico | Arc XP / Ingala: proyectos que arrancaban con contenedores e imágenes; ejecución y conexión vía **Docker Desktop + WSL** (no administración avanzada ni K8s) |
+| **Jest** | Contextual | En migraciones a Arc XP: pruebas en componentes grandes o lógica tediosa; el ritmo del proyecto limitaba cobertura amplia |
+| **IA como herramienta** | Uso responsable | En CV: no nombrar productos (Cursor, etc.) ni decir que genera o revisa código. Frase corta de alineación con la tendencia, sin sonar a vibe coding |
 
 ## Front-end y UI
 

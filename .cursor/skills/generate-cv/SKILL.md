@@ -15,7 +15,8 @@ description: >-
 - **Fuente de verdad:** solo `md/` (`perfil-maestro.md`, `experiencia/*`, `conocimientos-solidos.md`, `competencias-implicitas.md`, etc.).
 - **No inventar** roles, empresas, fechas, métricas ni tecnologías sin respaldo en `md/`.
 - **Sí se puede puenteear** con honestidad: si piden X y hay Y del mismo campo documentado, redactar Y como capacidad afín (ej. Tailwind pedido → responsive con Sass/CSS en Ingala/Infobae).
-- **No afirmar dominio** de una herramienta no documentada (Adobe Launch, etc.): omitir o, si hay afín, hablar del afín.
+- **No afirmar dominio** de una herramienta no documentada sin confirmación del usuario.
+- Si la oferta pide una tecnología/herramienta **sin mención en `md/`** (ni afín claro): **preguntar al usuario** si la conoce / la ha usado, **antes** de redactar el CV. No omitir en silencio ni inventar.
 - Salida: archivo `src/cvs/<slug>.ts` tipado con **`CvEntry`** (`id`, `jobTitle`, `headline`, `company`, `createdAt`, `profile`) desde `./types`. Contacto y educación dentro de `profile` se copian del patrón existente (p. ej. `arc-xp.ts`).
 - Registrar el export en [`src/cvs/index.ts`](../../src/cvs/index.ts) (añadirlo al array `cvEntries`). El listado en `/` lo muestra solo; no hace falta tocar `App.tsx`.
 
@@ -43,6 +44,20 @@ Para cada ítem: **match directo** | **afín documentado** | **sin evidencia**.
 
 Usar `conocimientos-solidos.md` + bullets de cada empresa. Consultar `competencias-implicitas.md` solo para ítems como Git/Agile cuando la oferta los pide y el md lo autoriza.
 
+### 2b. Preguntar por huecos (obligatorio si aplica)
+
+Si tras el mapeo quedan ítems **sin evidencia** (requeridos o deseables relevantes):
+
+1. **Detenerse** antes de crear el archivo `.ts`.
+2. Listar esas tecnologías/herramientas y preguntar, una ronda clara, p. ej.:
+   - ¿La conoces / la has usado en algún proyecto (aunque no esté en `md/`)?
+   - Si sí: ¿en qué contexto y con qué nivel (básico / práctico / fuerte)? ¿En qué empresa o proyecto conviene reflejarla?
+3. Según la respuesta:
+   - **Sí + contexto usable** → incluirla con honestidad (skill y/o bullet); si el usuario quiere, proponer también actualizar `md/` después.
+   - **No / solo de oídas** → omitir; si hay afín documentado, puenteear con el afín.
+   - **Parcial** → redactar solo lo que confirme, sin inflar.
+4. No inventar experiencia laboral nueva solo porque dijo “sí”; el texto debe cuadrar con un rol/periodo real o quedar como skill sin bullet falso.
+
 ### 3. Redactar secciones
 
 #### Sobre mí (`summary`)
@@ -51,7 +66,9 @@ Usar `conocimientos-solidos.md` + bullets de cada empresa. Consultar `competenci
 - Nombrar **1–2 tecnologías o dominios** que acoplen con la entrevista/oferta (los de mayor peso en requeridos que él cubra).
 - Si la oferta menciona habilidades blandas **y** hay evidencia (mentoría, colaboración con clientes/diseño/TI, capacitación), incluir **una** frase breve.
 - Incluir años / foco solo si es cierto según `perfil-maestro.md`.
-- Español, tono profesional, sin marketing vacío.
+- Español, **primera persona** (igual que la experiencia: “Desarrollé”, “He implementado”). Nunca tercera persona (“Ha trabajado”, “Usa…”): suena a texto autogenerado.
+- Tono profesional, sin marketing vacío.
+- **IA:** no nombrar Cursor, Copilot ni similares, ni decir que “genera o revisa código” con IA. Si la oferta lo pide y el usuario lo confirmó, una frase corta de alineación (“me mantengo alineado con las tendencias de IA como herramienta de trabajo”). No poner “IA asistida” ni nombres de producto en `skills`.
 
 #### Habilidades (`skills`)
 
@@ -99,15 +116,16 @@ Usar `conocimientos-solidos.md` + bullets de cada empresa. Consultar `competenci
 1. Crear `src/cvs/<slug>.ts` con `export const <slug>Cv: CvEntry = { id, jobTitle, headline, company, createdAt, profile: { … } }`.
 2. Importarlo y añadirlo en `src/cvs/index.ts` → `cvEntries`.
 3. Breve tabla en el chat: requerimiento → cómo quedó cubierto (directo / afín / omitido).
-4. Avisar si algo crítico de la oferta **no** tiene evidencia (ej. Adobe Launch).
+4. En la tabla final, marcar qué se preguntó al usuario y qué decidió (incluido / omitido / afín).
 5. Indicar la URL de preview: `/cv/<id>`.
 
 ## Checklist final
 
-- [ ] Nada inventado fuera de `md/`
+- [ ] Huecos sin evidencia en `md/` **preguntados** al usuario antes de redactar (si los había)
+- [ ] Nada inventado sin confirmación
 - [ ] `CvEntry` completo + registro en `src/cvs/index.ts`
 - [ ] Sobre mí con tech de la oferta + blanda solo si aplica
-- [ ] Skills alineadas a requeridos/deseables (+ afines)
+- [ ] Skills alineadas a requeridos/deseables (+ afines / confirmados)
 - [ ] Educación fija; idiomas vacíos salvo pedido
 - [ ] Experiencia densa y orientada a la vacante
 - [ ] Cabe en una página A4 con la plantilla actual (si desborda, recortar bullets menores, no mentir)

@@ -1,7 +1,8 @@
 import { arcXpCv } from './arc-xp'
+import { tivitFullstackCv } from './tivit-fullstack'
 import type { CvEntry } from './types'
 
-const cvEntries: CvEntry[] = [arcXpCv]
+const cvEntries: CvEntry[] = [arcXpCv, tivitFullstackCv]
 
 /** Listado ordenado: más reciente primero. */
 export function listCvs(): CvEntry[] {
