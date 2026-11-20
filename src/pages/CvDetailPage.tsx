@@ -13,8 +13,8 @@ function pdfFileName(company: string): string {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .trim()
-  const first = cleaned.split(/[\s/|,-]+/).filter(Boolean)[0] ?? 'CV'
-  const acronym = /^[A-Z0-9]{2,10}$/.test(first) ? first : null
+  const tokens = cleaned.split(/[\s/|,-]+/).filter(Boolean)
+  const acronym = tokens.find((token) => /^[A-Z0-9]{2,10}$/.test(token)) ?? null
   const slug = (acronym ?? cleaned)
     .replace(/[^A-Za-z0-9]+/g, '_')
     .replace(/^_|_$/g, '')

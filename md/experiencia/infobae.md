@@ -27,6 +27,8 @@ Desarrollo y mantenimiento del front de **Infobae** en el ecosistema **Arc XP**,
 ### Integraciones y automatización (v2)
 
 - Proyectos en **Angular** integrados al sitio mediante **iframes**, con comunicación entre contextos.
+- En **elecciones**, toma de un proyecto **Angular** ya armado: actualización del punto de datos del año (la estructura se mantenía) y ajustes sobre ese framework.
+- **Web Components** vía dependencias de **charts** estadísticos.
 - **Automatización con Python** (ej. envío de notificaciones).
 
 ### Liderazgo técnico y calidad
@@ -36,7 +38,7 @@ Desarrollo y mantenimiento del front de **Infobae** en el ecosistema **Arc XP**,
 
 ## Tecnologías
 
-`React` · `JavaScript` · `SASS` · `AMP` · `Arc XP` · `Node.js` · `Angular` (iframes) · `Python`
+`React` · `JavaScript` · `SASS` · `AMP` · `Arc XP` · `Node.js` · `Angular` (iframes, elecciones) · `Web Components` (charts) · `Python`
 
 ## Bullets sólidos (listos para CV)
 
@@ -47,6 +49,8 @@ Desarrollo y mantenimiento del front de **Infobae** en el ecosistema **Arc XP**,
 5. Servicios **Node.js** para coberturas en vivo (Mundial, elecciones), adaptando datos de fuente a consumo en front.
 6. Integración de módulos **Angular** vía **iframe** con comunicación cross-frame.
 7. Automatización de procesos con **Python** (notificaciones).
+8. Ajustes de un proyecto **Angular** de elecciones: datos del año nuevo sobre la misma estructura.
+9. Integración de **Web Components** de charts estadísticos provistos como dependencia.
 
 ## Notas y variantes
 

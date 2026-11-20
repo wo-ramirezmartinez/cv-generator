@@ -46,10 +46,16 @@ Migración y evolución de plataformas editoriales de gran audiencia. Trabajo so
 - Proyectos Arc XP que **arrancaban bajo contenedores e imágenes Docker**: aprendizaje práctico para **ejecutarlos** y configurar la conexión con **Docker Desktop** y **WSL** (nivel básico de uso diario, no ops avanzado).
 - **Jest** en migraciones: pruebas sobre **componentes grandes** o lógica tediosa, en un contexto de cambios rápidos y constantes que limitaba una suite exhaustiva.
 
+### SDKs, estándares y diseño
+
+- Uso del **SDK de Arc XP** de **suscripciones e identity** en varios de los medios migrados.
+- **ADRs** de flujo de trabajo y estándares para la creación de componentes. En un producto **low cost** inspirado en Arc XP (alcance menor que el CMS), se aplicaron esos ADR para acercar la arquitectura a la del CMS de referencia, incluida la **gestión de usuarios**.
+- Trabajo con **Figma** en casi todas las migraciones: rediseños, ajustes puntuales o el archivo ya existente del diseño.
+
 ### Colaboración y calidad
 
 - Trabajo con **diseño, TI y clientes**: soluciones técnicas, **estimaciones**, **code reviews**, entregas incrementales y presentación de avances.
-- Adaptación de soluciones por proyecto: rendimiento, mantenibilidad, consistencia visual.
+- Adaptación de soluciones por proyecto: rendimiento, mantenibilidad, consistencia visual. No diseñó microfrontends ni Module Federation; el criterio de arquitectura es de implementación y estándares, no de plataforma dueña.
 
 ## Logro destacado
 
@@ -74,6 +80,9 @@ Elegir según oferta; todos están contrastados en al menos una versión de CV.
 9. Colaboración cross-funcional, estimaciones, code reviews y entregas incrementales con clientes.
 10. Entorno local con **Docker** (imágenes/contenedores Arc XP) vía **Docker Desktop** y **WSL**.
 11. Pruebas con **Jest** en componentes grandes o lógica crítica durante migraciones de alto ritmo.
+12. Integración del **SDK de suscripciones e identity** de Arc XP en medios migrados.
+13. Aplicación y ajuste de **ADRs** y estándares de componentes; producto low cost alineado a la arquitectura de Arc XP, con gestión de usuarios.
+14. Implementación a partir de **Figma** en rediseños y ajustes de migración.
 
 ## Notas y variantes
 

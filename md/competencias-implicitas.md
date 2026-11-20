@@ -65,6 +65,10 @@ Documentado en [formacion-continua.md](./formacion-continua.md): **TypeScript** 
 | **Docker** | Básico — Arc XP con Docker Desktop + WSL; no K8s |
 | **Jest** | Contextual — componentes grandes / lógica tediosa en migraciones Arc XP |
 | **IA como herramienta** | Alineado a la tendencia; en CV no nombrar productos ni “generar/revisar código” |
+| **GraphQL (consumo)** | Proyecto de hotel con **Gatsby**, hace años; consumo sencillo, no diseño de contratos |
+| **Figma** | Migraciones: rediseño o archivo existente. No construir el design system |
+| **Microfrontends / Module Federation** | Visto o integrado en piezas; **no** diseñados. No listar como experiencia de arquitectura |
+| **CI/CD** | Disparó builds o vio checks. **No** configuró GitHub Actions ni Azure |
 
 ## Confirmar contigo antes de listar
 

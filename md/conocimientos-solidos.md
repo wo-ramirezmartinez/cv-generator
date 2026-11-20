@@ -72,6 +72,9 @@ Para **Git, npm, Agile y otras inferencias razonables** sin relato en CV, ver [c
 | **Code review, pair programming, mentoría junior** | Avanzado | Infobae, Ingala |
 | **Estimaciones, entregas incrementales, cliente** | Avanzado | Ingala |
 | **Capacitación** (equipos editoriales y técnicos) | Avanzado | Ingala |
+| **Figma** (lectura e implementación de diseños) | Avanzado como consumidor | Migraciones Ingala: rediseño, ajustes o archivo existente |
+| **ADRs / estándares de componentes** | Implementación | Ingala, incluido un producto low cost alineado a la arquitectura Arc XP. No es rol de arquitecto de plataforma |
+| **SDK Arc XP** (suscripciones e identity) | Integración | Varios medios migrados en Ingala |
 
 ## Salud / sector público
 
