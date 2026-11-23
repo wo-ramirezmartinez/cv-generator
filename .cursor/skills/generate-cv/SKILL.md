@@ -17,7 +17,7 @@ description: >-
 - **Sí se puede puenteear** con honestidad: si piden X y hay Y del mismo campo documentado, redactar Y como capacidad afín (ej. Tailwind pedido → responsive con Sass/CSS en Ingala/Infobae).
 - **No afirmar dominio** de una herramienta no documentada sin confirmación del usuario.
 - Si la oferta pide una tecnología/herramienta **sin mención en `md/`** (ni afín claro): **preguntar al usuario** si la conoce / la ha usado, **antes** de redactar el CV. No omitir en silencio ni inventar.
-- Salida: archivo `src/cvs/<slug>.ts` tipado con **`CvEntry`** (`id`, `jobTitle`, `headline`, `company`, `createdAt`, `profile`) desde `./types`. Contacto y educación dentro de `profile` se copian del patrón existente (p. ej. `arc-xp.ts`).
+- Salida: archivo `src/cvs/<slug>.ts` tipado con **`CvEntry`** (`id`, `jobTitle`, `headline`, `company`, `fileTag`, `createdAt`, `notes`, `profile`) desde `src/model/types.ts`. El perfil se arma con `withBase()` de `src/model/base.ts` (nombre, ciudad, contacto y formación). No copies esos campos. `src/cvs/` solo guarda recortes.
 - Registrar el export en [`src/cvs/index.ts`](../../src/cvs/index.ts) (añadirlo al array `cvEntries`). El listado en `/` lo muestra solo; no hace falta tocar `App.tsx`.
 
 ## Entrada esperada
@@ -62,13 +62,11 @@ Si tras el mapeo quedan ítems **sin evidencia** (requeridos o deseables relevan
 
 #### Sobre mí (`summary`)
 
-- 3–5 líneas, ~400–650 caracteres.
-- Nombrar **1–2 tecnologías o dominios** que acoplen con la entrevista/oferta (los de mayor peso en requeridos que él cubra).
-- Si la oferta menciona habilidades blandas **y** hay evidencia (mentoría, colaboración con clientes/diseño/TI, capacitación), incluir **una** frase breve.
-- Incluir años / foco solo si es cierto según `perfil-maestro.md`.
-- Español, **primera persona** (igual que la experiencia: “Desarrollé”, “He implementado”). Nunca tercera persona (“Ha trabajado”, “Usa…”): suena a texto autogenerado.
-- Tono profesional, sin marketing vacío.
-- **IA:** no nombrar Cursor, Copilot ni similares, ni decir que “genera o revisa código” con IA. Si la oferta lo pide y el usuario lo confirmó, una frase corta de alineación (“me mantengo alineado con las tendencias de IA como herramienta de trabajo”). No poner “IA asistida” ni nombres de producto en `skills`.
+- 3–4 frases, primera persona. Nunca tercera persona.
+- Hablar de **resultados**: sitios que salieron, piezas que el equipo pudo repetir, rendimiento / accesibilidad / SEO, acompañamiento.
+- **No nombrar tecnologías ni herramientas** (React, Figma, Lighthouse, Arc XP). Eso vive en habilidades y experiencia.
+- Apertura de referencia: «Desarrollador Front-End con más de 4 años en equipos que migran y evolucionan sitios de gran audiencia.»
+- Si la oferta pide IA y el usuario lo confirmó, como mucho una frase de alineación, sin productos y sin decir que genera código.
 
 #### Habilidades (`skills`)
 
@@ -109,11 +107,14 @@ Si tras el mapeo quedan ítems **sin evidencia** (requeridos o deseables relevan
 - `headline`: rol de presentación en el CV (también `profile.headline`); alinear al puesto sin mentir cargos laborales reales.
   - Ej.: oferta MarTech → `Desarrollador Front-End · MarTech & Analítica`.
 - `company`: empresa o cliente de la postulación (ej. `NTT DATA`).
+- `fileTag`: sigla del PDF, en mayúsculas (`BCP`, `TIVIT`). El archivo sale como `CV_William_<fileTag>`.
 - `createdAt`: fecha ISO `YYYY-MM-DD` del día en que se genera el recorte.
+- `notes`: la tabla de cobertura (`topic`, `status`: directo | afin | confirmado | omitido, `detail`). Es la memoria de la postulación; no se imprime.
+- `profile`: `withBase({ headline, summary, skills, languages, experience })`.
 
 ### 5. Entregar
 
-1. Crear `src/cvs/<slug>.ts` con `export const <slug>Cv: CvEntry = { id, jobTitle, headline, company, createdAt, profile: { … } }`.
+1. Crear `src/cvs/<slug>.ts`. Importar `withBase` desde `../model/base` y `CvEntry` desde `../model/types`. Exportar `export const <slug>Cv: CvEntry = { …, profile: withBase({ … }) }`.
 2. Importarlo y añadirlo en `src/cvs/index.ts` → `cvEntries`.
 3. Breve tabla en el chat: requerimiento → cómo quedó cubierto (directo / afín / omitido).
 4. En la tabla final, marcar qué se preguntó al usuario y qué decidió (incluido / omitido / afín).
@@ -124,7 +125,7 @@ Si tras el mapeo quedan ítems **sin evidencia** (requeridos o deseables relevan
 - [ ] Huecos sin evidencia en `md/` **preguntados** al usuario antes de redactar (si los había)
 - [ ] Nada inventado sin confirmación
 - [ ] `CvEntry` completo + registro en `src/cvs/index.ts`
-- [ ] Sobre mí con tech de la oferta + blanda solo si aplica
+- [ ] Sobre mí en primera persona, por resultados, sin nombrar herramientas
 - [ ] Skills alineadas a requeridos/deseables (+ afines / confirmados)
 - [ ] Educación fija; idiomas vacíos salvo pedido
 - [ ] Experiencia densa y orientada a la vacante
@@ -134,4 +135,5 @@ Si tras el mapeo quedan ítems **sin evidencia** (requeridos o deseables relevan
 
 - Ejemplo de mapeo MarTech: [examples.md](./examples.md)
 - Datos: `md/README.md` y archivos enlazados
-- Contrato: `src/cvs/types.ts`
+- Contrato: `src/model/types.ts`
+- Identidad fija: `src/model/base.ts` (`withBase`)

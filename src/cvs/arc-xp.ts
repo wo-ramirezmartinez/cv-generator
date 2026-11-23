@@ -1,4 +1,5 @@
-import type { CvEntry } from './types'
+import { withBase } from '../model/base'
+import type { CvEntry } from '../model/types'
 
 /** Recorte Arc XP (énfasis plataforma). La fuente larga sigue en `md/`. */
 
@@ -7,35 +8,19 @@ export const arcXpCv: CvEntry = {
   jobTitle: 'Front-End · Arc XP',
   headline: 'Desarrollador Front-End · Arc XP Expert',
   company: 'Plantilla / portfolio',
+  fileTag: 'ARCXP',
   createdAt: '2026-11-19',
-  profile: {
-    name: 'William Ramirez',
+  notes: [
+    {
+      topic: 'Uso',
+      status: 'directo',
+      detail: 'Plantilla de portafolio, no una postulación. El énfasis es Arc XP.',
+    },
+  ],
+  profile: withBase({
     headline: 'Desarrollador Front-End · Arc XP Expert',
-    location: 'Pimentel, Lambayeque, Perú',
     summary:
       'Desarrollador Front-End especializado en React y ArcXP, con más de 4 años de experiencia en desarrollo y migración de sitios digitales. Especializado en web performance, accesibilidad, responsive design y desarrollo de componentes reutilizables, con experiencia en la implementación de soluciones de alto rendimiento para proyectos digitales. ',
-    contact: [
-      {
-        label: 'wo.ramirezmartinez@gmail.com',
-        href: 'mailto:wo.ramirezmartinez@gmail.com',
-        kind: 'email',
-      },
-      {
-        label: '+51 926 206 624',
-        href: 'tel:+51926206624',
-        kind: 'phone',
-      },
-      {
-        label: 'linkedin.com/in/williamrmz',
-        href: 'https://www.linkedin.com/in/williamrmz/',
-        kind: 'linkedin',
-      },
-      {
-        label: 'github.com/williamrmz',
-        href: 'https://github.com/williamrmz',
-        kind: 'github',
-      },
-    ],
     skills: [
       'React',
       'JavaScript (ES6+)',
@@ -49,13 +34,6 @@ export const arcXpCv: CvEntry = {
       'Node.js',
       'APIs REST',
       'Web performance',
-    ],
-    education: [
-      {
-        title: 'Ingeniería de Sistemas y Computación',
-        institution: 'Universidad Católica Santo Toribio de Mogrovejo',
-        year: '2019',
-      },
     ],
     languages: [
       {
@@ -103,5 +81,5 @@ export const arcXpCv: CvEntry = {
         ],
       },
     ],
-  },
+  }),
 }

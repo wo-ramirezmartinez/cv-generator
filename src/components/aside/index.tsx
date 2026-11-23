@@ -1,4 +1,4 @@
-import type { CvProfile } from "../../cvs/types";
+import type { CvProfile } from "../../model/types";
 import "./index.css";
 
 const AsideComponent = ({ cv }: { cv: CvProfile }) => {

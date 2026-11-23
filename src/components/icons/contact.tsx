@@ -1,4 +1,4 @@
-import type { CvContactKind } from "../../cvs/types";
+import type { CvContactKind } from "../../model/types";
 
 type IconProps = {
   className?: string;

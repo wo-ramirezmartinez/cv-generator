@@ -21,9 +21,69 @@
 }
 
 .cv-list-header {
-  margin-bottom: 36px;
+  margin-bottom: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid color-mix(in srgb, var(--color-brand) 18%, transparent);
+}
+
+.cv-list-tools {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cv-list-search {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--color-text);
+  background: #fff;
+  border: 1px solid var(--color-border-muted);
+  border-radius: 8px;
+}
+
+.cv-list-search:focus {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  border-color: var(--color-border);
+}
+
+.cv-list-sort {
+  display: flex;
+  flex: none;
+  padding: 3px;
+  background: #fff;
+  border: 1px solid var(--color-border-muted);
+  border-radius: 8px;
+}
+
+.cv-list-sort button {
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  background: transparent;
+  cursor: pointer;
+}
+
+.cv-list-sort button.is-active {
+  color: #fff;
+  background: var(--color-brand);
+}
+
+.cv-list-item-tag {
+  padding: 3px 7px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-muted) 35%, #fff);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 6px;
 }
 
 .cv-list-eyebrow {

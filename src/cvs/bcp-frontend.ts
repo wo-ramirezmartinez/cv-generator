@@ -1,4 +1,5 @@
-import type { CvEntry } from './types'
+import { withBase } from '../model/base'
+import type { CvEntry } from '../model/types'
 
 /** Recorte BCP — frontend web. Sin microfrontends, CI/CD propio ni observabilidad de plataforma. */
 
@@ -7,35 +8,18 @@ export const bcpFrontendCv: CvEntry = {
   jobTitle: 'Frontend Web Software Engineer',
   headline: 'Desarrollador Front-End · React',
   company: 'Banco de Crédito BCP',
+  fileTag: 'BCP',
   createdAt: '2026-11-20',
-  profile: {
-    name: 'William Ramirez',
+  notes: [
+    { topic: 'React, REST, Git, rendimiento', status: 'directo', detail: 'Migraciones de medios y Lighthouse en La Tercera.' },
+    { topic: 'SDK, ADR, Figma, Angular, Web Components', status: 'confirmado', detail: 'Integración y ajustes, no diseño de plataforma.' },
+    { topic: 'GraphQL', status: 'confirmado', detail: 'Solo consumo en un proyecto de hotel con Gatsby. Va en habilidades, sin empleo inventado.' },
+    { topic: 'Microfrontends, Actions, Azure, Playwright, Sonar, OpenTelemetry', status: 'omitido', detail: 'No hay evidencia de diseño ni de operación propia.' },
+  ],
+  profile: withBase({
     headline: 'Desarrollador Front-End · React',
-    location: 'Pimentel, Lambayeque, Perú',
     summary:
       'Desarrollador Front-End con más de 4 años en equipos que migran y evolucionan sitios de gran audiencia. Dejé piezas reutilizables y criterios de construcción para que el equipo pudiera repetir el mismo nivel en los siguientes sitios. Las entregas cuidaron rendimiento, accesibilidad y SEO, y acompañé a perfiles nuevos en ese proceso.',
-    contact: [
-      {
-        label: 'wo.ramirezmartinez@gmail.com',
-        href: 'mailto:wo.ramirezmartinez@gmail.com',
-        kind: 'email',
-      },
-      {
-        label: '+51 926 206 624',
-        href: 'tel:+51926206624',
-        kind: 'phone',
-      },
-      {
-        label: 'linkedin.com/in/williamrmz',
-        href: 'https://www.linkedin.com/in/williamrmz/',
-        kind: 'linkedin',
-      },
-      {
-        label: 'github.com/williamrmz',
-        href: 'https://github.com/williamrmz',
-        kind: 'github',
-      },
-    ],
     skills: [
       'React',
       'JavaScript',
@@ -49,13 +33,6 @@ export const bcpFrontendCv: CvEntry = {
       'Accesibilidad web',
       'Jest',
       'Arc XP',
-    ],
-    education: [
-      {
-        title: 'Ingeniería de Sistemas y Computación',
-        institution: 'Universidad Católica Santo Toribio de Mogrovejo',
-        year: '2019',
-      },
     ],
     languages: [],
     experience: [
@@ -104,5 +81,5 @@ export const bcpFrontendCv: CvEntry = {
         ],
       },
     ],
-  },
+  }),
 }

@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { listCvs } from '../cvs'
 import './CvListPage.css'
@@ -14,7 +15,24 @@ function formatCreatedAt(isoDate: string): string {
 }
 
 export default function CvListPage() {
-  const entries = listCvs()
+  const [query, setQuery] = useState('')
+  const [sortBy, setSortBy] = useState<'recent' | 'company'>('recent')
+  const entries = useMemo(() => {
+    const needle = query.trim().toLowerCase()
+    const filtered = listCvs().filter((entry) => {
+      if (!needle) return true
+      return [entry.jobTitle, entry.headline, entry.company, entry.fileTag]
+        .join(' ')
+        .toLowerCase()
+        .includes(needle)
+    })
+
+    if (sortBy === 'company') {
+      filtered.sort((a, b) => a.company.localeCompare(b.company, 'es') || b.createdAt.localeCompare(a.createdAt))
+    }
+
+    return filtered
+  }, [query, sortBy])
 
   return (
     <main className="cv-list">
@@ -28,8 +46,38 @@ export default function CvListPage() {
           </p>
         </header>
 
+        <div className="cv-list-tools">
+          <input
+            className="cv-list-search"
+            type="search"
+            value={query}
+            placeholder="Buscar por puesto, empresa o sigla"
+            onChange={(event) => setQuery(event.target.value)}
+          />
+          <div className="cv-list-sort" role="group" aria-label="Orden">
+            <button
+              type="button"
+              className={sortBy === 'recent' ? 'is-active' : ''}
+              onClick={() => setSortBy('recent')}
+            >
+              Recientes
+            </button>
+            <button
+              type="button"
+              className={sortBy === 'company' ? 'is-active' : ''}
+              onClick={() => setSortBy('company')}
+            >
+              Empresa
+            </button>
+          </div>
+        </div>
+
         {entries.length === 0 ? (
-          <p className="cv-list-empty">Todavía no hay CVs registrados.</p>
+          <p className="cv-list-empty">
+            {query.trim()
+              ? 'Ningún CV coincide con esa búsqueda.'
+              : 'Todavía no hay CVs registrados.'}
+          </p>
         ) : (
           <ul className="cv-list-items">
             {entries.map((entry) => (
@@ -42,6 +90,7 @@ export default function CvListPage() {
                     <span className="cv-list-item-company">{entry.company}</span>
                   </span>
                   <span className="cv-list-item-meta">
+                    <span className="cv-list-item-tag">{entry.fileTag}</span>
                     <time dateTime={entry.createdAt}>
                       {formatCreatedAt(entry.createdAt)}
                     </time>

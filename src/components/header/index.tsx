@@ -1,4 +1,4 @@
-import type { CvProfile } from "../../cvs/types";
+import type { CvProfile } from "../../model/types";
 import avatar from "../../assets/images/will-small.png";
 import { ContactKindIcon, LocationIcon } from "../icons/contact";
 import "./index.css";

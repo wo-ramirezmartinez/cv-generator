@@ -8,10 +8,10 @@ alwaysApply: false
 
 Al crear o ajustar un archivo en `src/cvs/`, seguir el skill **generate-cv**. Resumen no negociable:
 
-1. Exportar **`CvEntry`** (`id`, `jobTitle`, `headline`, `company`, `createdAt`, `profile`) y registrarlo en `src/cvs/index.ts`.
+1. Exportar **`CvEntry`** (`id`, `jobTitle`, `headline`, `company`, `fileTag`, `createdAt`, `notes`, `profile`) con `withBase()`, y registrarlo en `src/cvs/index.ts`.
 2. **Solo evidencia en `md/`** o confirmación explícita del usuario. Puente afín permitido; nunca inventar.
 3. Si la oferta pide algo **no descrito en `md/`**: **preguntar** si lo conoce/usó (contexto y nivel) **antes** de generar el CV; no omitir en silencio.
-4. **Sobre mí:** primera persona; acoplar 1–2 tech de la oferta; blanda solo si aplica. IA: sin nombrar productos ni “generar código”.
+4. **Sobre mí:** primera persona y resultados, sin nombrar tecnologías ni herramientas. IA: sin productos ni “generar código”. Guardar la cobertura en `notes`.
 5. **Skills:** requeridos + deseables cubiertos (directo, afín o confirmado); 10–14 ítems.
 6. **Formación:** siempre USAT 2019; sin extras salvo pedido explícito.
 7. **Idiomas:** `[]` salvo que la oferta o el usuario lo pidan.

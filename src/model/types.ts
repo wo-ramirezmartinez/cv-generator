@@ -1,4 +1,4 @@
-/** Contrato compartido para cualquier recorte de CV en `src/cvs/`. */
+/** Contrato compartido de los recortes en `src/cvs/`. */
 
 export type CvContactKind = 'email' | 'phone' | 'linkedin' | 'github' | 'web'
 
@@ -38,12 +38,24 @@ export type CvProfile = {
   experience: CvExperience[]
 }
 
+export type CvCoverageStatus = 'directo' | 'afin' | 'confirmado' | 'omitido'
+
+/** Por qué el recorte dice lo que dice. No se imprime. */
+export type CvNote = {
+  topic: string
+  status: CvCoverageStatus
+  detail: string
+}
+
 /** Entrada de catálogo: metadata del listado + perfil exportable. */
 export type CvEntry = {
   id: string
   jobTitle: string
   headline: string
   company: string
+  /** Sigla del PDF: CV_William_<fileTag>. */
+  fileTag: string
   createdAt: string // ISO date YYYY-MM-DD
+  notes: CvNote[]
   profile: CvProfile
 }

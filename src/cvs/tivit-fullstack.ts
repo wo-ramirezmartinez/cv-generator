@@ -1,4 +1,5 @@
-import type { CvEntry } from './types'
+import { withBase } from '../model/base'
+import type { CvEntry } from '../model/types'
 
 /** Recorte TIVIT — Fullstack React + Node (sin .NET). Fuente: `md/` + confirmaciones Docker/Jest/IA. */
 
@@ -7,35 +8,19 @@ export const tivitFullstackCv: CvEntry = {
   jobTitle: 'Desarrollador Fullstack (.NET/React + IA)',
   headline: 'Desarrollador Full-Stack · React & Node.js',
   company: 'TIVIT LATAM',
+  fileTag: 'TIVIT',
   createdAt: '2026-11-20',
-  profile: {
-    name: 'William Ramirez',
+  notes: [
+    { topic: 'React, REST, Git, SQL', status: 'directo', detail: 'Evidencia en Ingala, Infobae y LOT.' },
+    { topic: '.NET', status: 'omitido', detail: 'No lo maneja. El backend del CV es Node.js.' },
+    { topic: 'Docker', status: 'confirmado', detail: 'Básico: Docker Desktop y WSL en proyectos Arc XP.' },
+    { topic: 'Jest', status: 'confirmado', detail: 'Selectivo, en componentes o lógica crítica de migraciones.' },
+    { topic: 'IA', status: 'confirmado', detail: 'Una frase de alineación. Sin nombrar productos ni generación de código.' },
+  ],
+  profile: withBase({
     headline: 'Desarrollador Full-Stack · React & Node.js',
-    location: 'Pimentel, Lambayeque, Perú',
     summary:
       'Desarrollador con más de 4 años de experiencia en software, con foco en React y en backends con Node.js y APIs REST. He implementado soluciones sobre arquitecturas de equipo (Arc XP y productos propios), con estándares, code reviews y entregas incrementales. Me mantengo alineado con las tendencias de IA como herramienta de trabajo.',
-    contact: [
-      {
-        label: 'wo.ramirezmartinez@gmail.com',
-        href: 'mailto:wo.ramirezmartinez@gmail.com',
-        kind: 'email',
-      },
-      {
-        label: '+51 926 206 624',
-        href: 'tel:+51926206624',
-        kind: 'phone',
-      },
-      {
-        label: 'linkedin.com/in/williamrmz',
-        href: 'https://www.linkedin.com/in/williamrmz/',
-        kind: 'linkedin',
-      },
-      {
-        label: 'github.com/williamrmz',
-        href: 'https://github.com/williamrmz',
-        kind: 'github',
-      },
-    ],
     skills: [
       'React',
       'JavaScript',
@@ -48,13 +33,6 @@ export const tivitFullstackCv: CvEntry = {
       'Jest',
       'MongoDB',
       'HTML / CSS / Sass',
-    ],
-    education: [
-      {
-        title: 'Ingeniería de Sistemas y Computación',
-        institution: 'Universidad Católica Santo Toribio de Mogrovejo',
-        year: '2019',
-      },
     ],
     languages: [],
     experience: [
@@ -103,5 +81,5 @@ export const tivitFullstackCv: CvEntry = {
         ],
       },
     ],
-  },
+  }),
 }

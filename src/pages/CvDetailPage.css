@@ -90,6 +90,77 @@
   color: #57534e;
 }
 
+.cv-overflow {
+  width: 210mm;
+  max-width: 100%;
+  margin: 0 auto 12px;
+  padding: 10px 14px;
+  color: #7c2d12;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.cv-notes {
+  width: 210mm;
+  max-width: 100%;
+  margin: 0 auto 16px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--color-border-muted);
+  border-radius: 12px;
+}
+
+.cv-notes summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.cv-notes ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-notes li {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #44403c;
+}
+
+.cv-note {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+.cv-note-directo,
+.cv-note-confirmado {
+  color: #3f2a1d;
+  background: #f3e6d8;
+}
+
+.cv-note-afin {
+  color: #7c4a32;
+  background: #faeee6;
+}
+
+.cv-note-omitido {
+  color: #78716c;
+  background: #f5f5f4;
+}
+
 .cv-button-download {
   background: var(--color-brand);
   border-radius: 8px;
