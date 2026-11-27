@@ -65,7 +65,7 @@ Si tras el mapeo quedan ítems **sin evidencia** (requeridos o deseables relevan
 - 3–4 frases, primera persona. Nunca tercera persona.
 - Hablar de **resultados**: sitios que salieron, piezas que el equipo pudo repetir, rendimiento / accesibilidad / SEO, acompañamiento.
 - **No nombrar tecnologías ni herramientas** (React, Figma, Lighthouse, Arc XP). Eso vive en habilidades y experiencia.
-- Apertura de referencia: «Desarrollador Front-End con más de 4 años en equipos que migran y evolucionan sitios de gran audiencia.»
+- Apertura de referencia: «Desarrollador Front-End con más de 5 años en React, más de 4 de ellos en medios digitales.» React desde Dic 2020 (LOT); medios desde Ene 2022 (Infobae).
 - Si la oferta pide IA y el usuario lo confirmó, como mucho una frase de alineación, sin productos y sin decir que genera código.
 
 #### Habilidades (`skills`)

@@ -91,7 +91,7 @@ export const levelupFullstackCv: CvEntry = {
   profile: withBase({
     headline: "Desarrollador Full-Stack · React, Node.js y AWS",
     summary:
-      "Desarrollador con más de 4 años de experiencia en software, con foco en React y en backends con Node.js y APIs REST. He implementado soluciones sobre arquitecturas de equipo y productos propios, con estándares, code reviews y entregas incrementales. He desplegado sitios en la nube y desarrollado servicios serverless.",
+      "Desarrollador con más de 5 años de experiencia en software, con foco en React y en backends con Node.js y APIs REST. He implementado soluciones sobre arquitecturas de equipo y productos propios, con estándares, code reviews y entregas incrementales. He desplegado sitios en la nube y desarrollado servicios serverless.",
     skills: [
       "React",
       "Node.js",
